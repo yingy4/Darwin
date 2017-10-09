@@ -23,6 +23,8 @@ jobs:
     
     steps:
       - checkout
+        post:
+          - cp ./home/circleci/Darwin/LaScala/artifacts/com/phasmid/lascala_2.11/1.0.8/ ./home/circleci/.sbt/preloaded/com/phasmid/lascala_2.11/1.0.8/
 
       # Download and cache dependencies
       - restore_cache:
