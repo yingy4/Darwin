@@ -28,6 +28,7 @@ jobs:
       - run: sudo mkdir -p /home/circleci/.m2/repository/
       - run: sudo cp -r ./LaScala/artifacts/ /home/circleci/.m2/repository/
       - run: sudo chmod 777 /home/circleci/.m2
+      - run: sudo ls /home/circleci/.m2
 
       # Download and cache dependencies
       - restore_cache:
