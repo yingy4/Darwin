@@ -29,6 +29,10 @@ jobs:
       - run: cp -r ./LaScala/artifacts/com /home/circleci/.m2/repository/
       # - run: sudo chmod 777 /home/circleci/.m2
       - run: find /home/circleci/.m2
+      - run: export CIRCLE_TOKEN='?circle-token=4cf8c4341b1054f81036e0231edf20085f3ac90c'
+      - run: curl https://circleci.com/api/v1.1/project/github/yingy4/LaScala/10/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' > artifacts.txt
+      - run: <artifacts.txt xargs -P4 -I % wget %$CIRCLE_TOKEN
+      - run: find .
 
       # Download and cache dependencies
       - restore_cache:
