@@ -31,9 +31,13 @@ jobs:
       - run: find /home/circleci/.m2
       - run: export CIRCLE_TOKEN='?circle-token=4cf8c4341b1054f81036e0231edf20085f3ac90c'
       - run: curl https://circleci.com/api/v1.1/project/github/yingy4/LaScala/10/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' > artifacts.txt
-      - run: <artifacts.txt xargs -P4 -I % wget -P $(awk -F/ '{print $2}' %) %$CIRCLE_TOKEN
+      - run: <artifacts.txt xargs -P4 -I % wget -P /home/circleci/.ivy2/local/com.phasmid/lascala_2.11/1.0.9-SNAPSHOT/docs/ %$CIRCLE_TOKEN
+      - run: <artifacts.txt xargs -P4 -I % wget -P /home/circleci/.ivy2/local/com.phasmid/lascala_2.11/1.0.9-SNAPSHOT/ivys/ %$CIRCLE_TOKEN
+      - run: <artifacts.txt xargs -P4 -I % wget -P /home/circleci/.ivy2/local/com.phasmid/lascala_2.11/1.0.9-SNAPSHOT/jars/ %$CIRCLE_TOKEN
+      - run: <artifacts.txt xargs -P4 -I % wget -P /home/circleci/.ivy2/local/com.phasmid/lascala_2.11/1.0.9-SNAPSHOT/poms/ %$CIRCLE_TOKEN
+      - run: <artifacts.txt xargs -P4 -I % wget -P /home/circleci/.ivy2/local/com.phasmid/lascala_2.11/1.0.9-SNAPSHOT/srcs/ %$CIRCLE_TOKEN
       # - run: awk -F/ '{wget}' $0$CIRCLE_TOKEN artifacts.txt
-      - run: find .
+      - run: find /home/circleci/.ivy2/local
 
       # Download and cache dependencies
       - restore_cache:
