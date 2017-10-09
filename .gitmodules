@@ -1,0 +1,3 @@
+[submodule "LaScala"]
+	path = LaScala
+	url = https://github.com/yingy4/LaScala
