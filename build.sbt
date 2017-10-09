@@ -61,10 +61,9 @@ libraryDependencies ++= Seq(
   scalaModules %% "scala-parser-combinators" % scalaModulesVersion,
   scalaModules %% "scala-xml" % "1.0.6",
 	"joda-time" % "joda-time" % "2.9.9",
-  "com.phasmid" %% "lascala" % "1.0.8",
+ // "com.phasmid" %% "lascala" % "1.0.8",
   "org.clapper" %% "classutil" % "1.1.2",
 	akkaGroup %% "akka-actor" % akkaVersion.value,
 	"org.scalatest" %% "scalatest" % scalaTestVersion.value % "test"
 )
 
-unmanagedBase = file("/LaScala/artifacts/com/phasmid/lascala_2.11/1.0.8/")
