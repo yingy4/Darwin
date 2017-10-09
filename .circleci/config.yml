@@ -33,7 +33,7 @@ jobs:
       - run: curl https://circleci.com/api/v1.1/project/github/yingy4/LaScala/10/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' > artifacts.txt
       # - run: <artifacts.txt xargs -P4 -I % wget -P ./download %$CIRCLE_TOKEN
       - run: awk -F/ '{wget -P /download $0$CIRCLE_TOKEN}' artifacts.txt
-      - run: find /download
+      - run: find ./download
 
       # Download and cache dependencies
       - restore_cache:
