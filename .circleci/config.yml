@@ -25,10 +25,10 @@ jobs:
       - checkout
       - run: git submodule sync
       - run: git submodule update --init
-      - run: sudo mkdir -p /home/circleci/.m2/repository/
-      - run: sudo cp -r ./LaScala/artifacts/com /home/circleci/.m2/repository/
-      - run: sudo chmod 777 /home/circleci/.m2
-      - run: sudo find /home/circleci/.m2
+      - run: mkdir -p /home/circleci/.m2/repository/
+      - run: cp -r ./LaScala/artifacts/com /home/circleci/.m2/repository/
+      # - run: sudo chmod 777 /home/circleci/.m2
+      - run: find /home/circleci/.m2
 
       # Download and cache dependencies
       - restore_cache:
