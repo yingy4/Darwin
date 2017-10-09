@@ -1,4 +1,4 @@
-# Darwin
+# Darwin [![CircleCI](https://circleci.com/gh/yingy4/Darwin.svg?style=svg)](https://circleci.com/gh/yingy4/Darwin)
 Darwin framework (Scala) for Genetic Algorithms (based on Darwin at SourceForge).
 
 This is a general purpose framework for performing evolutionary computation (via so-called genetic algorithms).
