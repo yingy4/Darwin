@@ -35,7 +35,7 @@ resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repos
 resolvers += Resolver.sonatypeRepo("public")
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
 
-resolvers += Resolver.file("my-repo", file("LaScala/artifacts"))
+resolvers += Resolver.file("my-repo", file("LaScala"))
 
 libraryDependencies ++= (scalaBinaryVersion.value match {
   case "2.12" =>   Seq(
