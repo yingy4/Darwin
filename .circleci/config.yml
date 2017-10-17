@@ -23,7 +23,7 @@ jobs:
     
     steps:
       - checkout
-      - run: echo "export lascalaver=$(ls -l|grep "laScalaVersion" build.sbt|cut -d'"' -f2)" >> $BASH_ENV
+      - run: echo "export lascalaver=$(ls -l|grep "laScalaVersion" build.sbt|cut -d'"' -f2|head -1)" >> $BASH_ENV
       - run: git submodule sync
       - run: git submodule update --init
       - run: mkdir -p /home/circleci/.m2/repository/
