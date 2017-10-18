@@ -20,8 +20,11 @@ jobs:
       # Customize the JVM maximum heap limit
       JVM_OPTS: -Xmx3200m
       TERM: dumb
-      LaScalaBuildNumber: 10
+      # LaScala Circle CI latest successful build. Can be found from: https://circleci.com/gh/yingy4/LaScala/tree/master
+      LaScalaBuildNumber: 11
+      # GitHub Username
       GitHubName: yingy4
+      # Circle CI Token for download artifacts. Can be generated from: https://circleci.com/account/api
       CircleCIToken: 4cf8c4341b1054f81036e0231edf20085f3ac90c
     
     steps:
