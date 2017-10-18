@@ -20,6 +20,8 @@ jobs:
       # Customize the JVM maximum heap limit
       JVM_OPTS: -Xmx3200m
       TERM: dumb
+      LaScalaBuildNumber: 10
+      GitHubName: yingy4
     
     steps:
       - checkout
@@ -31,7 +33,7 @@ jobs:
       # - run: sudo chmod 777 /home/circleci/.m2
       - run: find /home/circleci/.m2
       - run: export CIRCLE_TOKEN='?circle-token=4cf8c4341b1054f81036e0231edf20085f3ac90c'
-      - run: curl https://circleci.com/api/v1.1/project/github/yingy4/LaScala/10/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' > artifacts.txt
+      - run: curl https://circleci.com/api/v1.1/project/github/$GitHubName/LaScala/$LaScalaBuildNumber/artifacts$CIRCLE_TOKEN | grep -o 'https://[^"]*' > artifacts.txt
       - run: <artifacts.txt xargs -P4 -I % wget -P /home/circleci/.ivy2/local/com.phasmid/lascala_2.11/$lascalaver/docs/ -A 'lascala_*-javadoc.jar*' %$CIRCLE_TOKEN
       - run: <artifacts.txt xargs -P4 -I % wget -P /home/circleci/.ivy2/local/com.phasmid/lascala_2.11/$lascalaver/ivys/ -A 'ivy.xml*' %$CIRCLE_TOKEN
       - run: <artifacts.txt xargs -P4 -I % wget -P /home/circleci/.ivy2/local/com.phasmid/lascala_2.11/$lascalaver/jars/ -A 'lascala_*.jar*' -R '*-javadoc.jar*,*-sources.jar*' %$CIRCLE_TOKEN
