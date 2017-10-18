@@ -22,7 +22,7 @@ jobs:
       TERM: dumb
       LaScalaBuildNumber: 10
       GitHubName: yingy4
-      CIRCLE_TOKEN: circle-token=4cf8c4341b1054f81036e0231edf20085f3ac90c
+      CIRCLE_TOKEN: ?circle-token=4cf8c4341b1054f81036e0231edf20085f3ac90c
     
     steps:
       - checkout
