@@ -26,6 +26,8 @@ jobs:
       GitHubName: yingy4
       # Circle CI Token for download artifacts. Can be generated from: https://circleci.com/account/api
       CircleCIToken: 4cf8c4341b1054f81036e0231edf20085f3ac90c
+      #Codacy project token
+ +    CODACY_PROJECT_TOKEN: 6f59a927c190459e808ad7ae27fa1c2d
     
     steps:
       - checkout
